@@ -1,283 +1,118 @@
-<!Doctype html>
-<html lang="eng">
-    <head>
-        <link rel="icon" type="image/png" href="favicon.png">
-        <title> Peka online tutorial official webpage</title>
-        
-        <style>
-          
-            body {
-                font-family: 'Poppins', sans-serif;
-                background-color: #4103035d;
-                background-image: url(img.png); 
-                color: rgb(249, 249, 247);
-                
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peka Online Tutorial Official Webpage</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #d7ccc8; /* Soft beige background */
+            color: #333;
         }
-        h1 {
+
+        /* Main Header Box */
+        .main-header {
+            background-color: #1a237e;
+            color: white;
             text-align: center;
-            }
-        .box{
-            /* or any width you want */
-         /* this centers the box horizontally */
-  text-align: center;    /* this centers the text inside the box */
-  font-size: 1em;
-  width: 52%;             /* or 90%, adjusts to screen size */
-  max-width: 1200px;      /* optional: prevent it from being too wide */
-  margin: 0 auto;         /* centers the box */
-  text-align: center;     /* centers the text */
-  
-  border: 8px solid #252d84;
-  background-color: #252d84;
-  border-radius: 15px;
-  height: 35px; /* A subtle border */
-  font-weight: bold;
-  margin-top: 1%;
- padding: 0% 0% 0% 0%; 
- font-size: 2em;
- display: flex;
- 
-    
-  
-  
-  
-
-  
-  
-            
-         
-
-            
-  /* 1. The Glowing Text */
-  text-shadow:
-    0.2 0.2 5px #700000,  /* Subtle, tight aqua glow */
-    0.2 0.2 10px #700000, /* Slightly larger glow */
-    0.2 0.2 20px #700000, /* Widest, brightest glow */
-   0.2 0.2 40px #700000; /* Even wider, softer glow */
-
-  /* 2. The Glowing Box */
-  box-shadow:
-    0 0 10px #252d84,   /* Inner box glow */
-    0 0 20px  #252d84,   /* Outer box glow */
-    0 0 30px #252d84;   /* Softest, widest glow */
-  
-  /* 3. Transition for a smooth hover effect */
-  transition: all 3s ease-in-out;
-            
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        p{
-            color: rgb(58, 58, 13);
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 2em;
-            }
- 
-    h4{ 
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 3em;
-    
-  border-radius: 15px; /* Rounded corners */
-  border: 2px solid #333; /* A subtle border */
-  
-  /* Text Properties */
-  font-size: 3em;
-  font-weight: bold;
-  text-align: center;
-  
-  
-  /* ------------------- THE GLOWING EFFECT ------------------- */
-  
-  /* 1. The Glowing Text */
-  text-shadow:
-    0 0 5px #0ff,  /* Subtle, tight aqua glow */
-    0 0 10px #0ff, /* Slightly larger glow */
-    0 0 20px #0ff, /* Widest, brightest glow */
-    0 0 40px #0ff; /* Even wider, softer glow */
 
-  /* 2. The Glowing Box */
-  box-shadow:
-    0 0 10px #0ff,   /* Inner box glow */
-    0 0 20px #0ff,   /* Outer box glow */
-    0 0 30px #0ff;   /* Softest, widest glow */
+        /* Flex Container for Image and Buttons */
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Stacks items on mobile */
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-  transition: all 3s ease-in-out;
+        .image-side { flex: 1; min-width: 300px; }
+        .image-side img { width: 100%; border-radius: 10px; }
 
-    }
-.but{
-        padding:30px 60px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 40px;
-        font-weight: 600;
-        border: #4103035d;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: all 0.3s ease;}
-.but.register{
-        background: linear-gradient(135deg, #43e97b, #38f9d7);
-        color:white;
-        box-shadow: 0 4px 12px rgba(0, 150, 250, 0.3);
-}
-    
-.but.register:hover{
-        background:  linear-gradient(135deg, #009999 , #00f2fe);
-        transform: translateY(-3px);
-        box-shadow: 0 6px 16px rgba(56, 249, 215, 0.4);
-}
+        .button-side { 
+            flex: 1; 
+            min-width: 300px; 
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2x2 grid */
+            gap: 20px;
+        }
 
-#aboutBtn{
-    background: linear-gradient(135deg, #009999 ,#202020 ) ;
-    color: white;
-    border: 2px solid#4facfe;
-}
-#aboutBtn:hover{
-    background: #003366;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(79, 172, 254, 0.3);
-}
+        /* Call to Action Text */
+        .cta-text {
+            font-weight: bold;
+            color: #5c6bc0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
 
-.but.exam{
-        background: linear-gradient(135deg, #9197e4, #eba3a3);
-        color:rgb(89, 26, 26);
-        box-shadow: 0 4px 12px rgba(0, 150, 250, 0.3);
+        /* Buttons */
+        .but {
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-weight: bold;
+        }
+        .but:hover { transform: scale(1.05); }
 
-}
+        .register { background: linear-gradient(135deg, #43e97b, #38f9d7); color: #fff; }
+        .exam { background: linear-gradient(135deg, #d3a3c9, #eb9d9d); color: #4a148c; }
+        .about { background: #004d40; color: white; }
+        .nots { background: linear-gradient(135deg, #fb8c00, #ffcc80); color: #5d4037; }
 
+        /* Footer Banner */
+        .footer-banner {
+            margin-top: 40px;
+            background: #00bcd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            border: 3px solid #00acc1;
+        }
 
-.but.exam:hover{
-    background: #003366;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(79, 172, 254, 0.3);
-}
-.but.nots{
-        background: linear-gradient(135deg, #ce8332, #dfa7a7);
-        color:rgb(89, 26, 26);
-        box-shadow: 0 4px 12px rgba(0, 150, 250, 0.3);
-
-}
-
-
-.but.nots:hover{
-    background: #003366;
-    color: rgb(35, 44, 96);
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(79, 172, 254, 0.3);
-}
-one{
-    color: blue;
-    padding: 30px;
-    border-radius: 50%;
-    border: #43e97b;
-    width:40px;
-    height:20px ;
-    text-shadow: 0 0 5px #ff4d4d,
-               0 0 10px #ff4d4d,
-               0 0 20px #ffb347,
-               0 0 40px #ffb347;
-  animation: neonPulse 2s infinite alternate;
-
-  font-size: 2.5rem; /* large for landing page */
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  
-  /* Gradient text */
-  background: linear-gradient(90deg, #4d71ff, #990066 , #202020  );
-  background-clip: text;        
--webkit-background-clip: text;   
--webkit-text-fill-color: transparent;
-
-  /* Glow effect */
-  text-shadow: 0 0 10px rgba(41, 7, 54, 0.6),
-               0 0 20px rgba(5, 74, 28, 0.4);
-  
-  /* Smooth animation */
-  animation: glowPulse 3s infinite alternate;
-}
-
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px rgba(255, 100, 100, 0.6),
-                 0 0 20px rgba(255, 180, 70, 0.4);
-  }
-  to {
-    text-shadow: 0 0 20px rgba(255, 150, 150, 0.9),
-                 0 0 40px rgba(255, 200, 120, 0.6);
-  }
-  
-}
-
-.about-box {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    color: #333;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-    display: none;
-  }
-  .about-box.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-
-
-
-        </style>
-        
-        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .button-side { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<script>
-document.getElementById("regForm").addEventListener("submit", async function(e){
-  e.preventDefault();
+<body>
 
-  const formData = {
-    name: this.name.value,
-    email: this.email.value,
-    password: this.password.value
-  };
+    <div class="main-header">WELCOME TO PEKA ONLINE TUTORIAL WEBSITE</div>
 
-  const response = await fetch("http://localhost:3000/register", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData)
-  });
+    <div class="content-wrapper">
+        <div class="image-side">
+            <img src="img4.jpeg" alt="Student studying">
+        </div>
 
-  const result = await response.text();
-  alert(result); // Show response from server
-});
-</script>
-<body> 
-    
- 
-    <h1 class="box"> WELCOME TO PEKA ONLINE TUTORIAL WEBSITE</h1> 
-                                                               <br>
-                                                               
-                                                               
-   <img src="img4.jpeg"  width="600px", height="400px" style="float:left;"> 
-    <p>
-<one> BOOST YOUR  ACADEMIC STATUS WITH US.</one> <br>
-<br>
+        <div class="button-side">
+            <div style="grid-column: span 2;" class="cta-text">BOOST YOUR ACADEMIC STATUS WITH US.</div>
+            <button onclick="window.location.href='form.html'" class="but register">Register now</button> 
+            <button onclick="window.location.href='Class.html'" class="but exam">Exams</button>
+            <button onclick="window.location.href='about.html'" class="but about">About us</button>
+            <button onclick="window.location.href='notes.html'" class="but nots">Short Nots</button>
+        </div>
+    </div>
 
-&emsp; &emsp;&emsp; <button onclick="window.location.href='form.html'" class="but register">Register now</button> 
-&emsp; &emsp;&emsp; <button onclick="window.location.href='Class.html'" class="but exam">Exams</button> <br>
-<br>
- &emsp; &emsp;&emsp;&emsp; <button onclick="window.location.href='about.html'" id="aboutBtn" class="but about"> about us </button>
-&emsp; &emsp;&emsp; <button onclick="window.location.href='notes.html'" class="but nots">Short Nots</button> <br>
+    <div class="footer-banner">
+        BE A CHAMPION OF EDUCATION WITH US FOR YOUR FUTURE
+    </div>
 
-
- 
-
-  
-
-  <h4>BE A CHAMPION OF EDUCATION WITH US FOR YOU FUTURE</h4>
-  
-  
 </body>
 </html>
 
