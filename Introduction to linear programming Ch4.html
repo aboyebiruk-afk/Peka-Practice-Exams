@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mathematics Unit One – MCQ Quiz</title>
+
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #204324, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9fafb;
+}
+
+.quiz-container {
+  width: 95%;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.question {
+  display: flex;
+  gap: 20px;
+  background: rgba(172, 126, 126, 0.25);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.question:hover {
+  transform: scale(1.01);
+}
+
+.question-left {
+  flex: 2;
+}
+
+.question-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.options button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #bcb7ba, #6a7a8a);
+  color: #111827;
+  transition: all 0.25s ease;
+}
+
+.options button:hover {
+  background: linear-gradient(135deg, #60a5fa, #6abb5a);
+  color: #f8f5f5;
+  transform: translateX(5px);
+}
+
+.feedback {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  min-height: 1.2em;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.correct { color: #22c55e; }
+.wrong { color: #f87171; }
+
+.video-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .question {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<div class="quiz-container">
+<h1>⚡ Mathematics Unit Four ⚡</h1>
+<div id="quiz"></div>
+</div>
+
+<script>
+const questions = [
+      {
+        q: "1. The 10<sup>th</sup> term of the sequence 1, 1, 2, 3, 5, 5, 8,...is",
+        options: ["25", "34", "21", "55"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      
+
+    
+    
+];
+
+const quizDiv = document.getElementById("quiz");
+const letters = ["A","B","C","D"];
+
+questions.forEach(item => {
+  const qDiv = document.createElement("div");
+  qDiv.className = "question";
+
+  const left = document.createElement("div");
+  left.className = "question-left";
+
+  const title = document.createElement("h3");
+  title.innerHTML = item.q;
+
+  const optionsDiv = document.createElement("div");
+  optionsDiv.className = "options";
+
+  const feedback = document.createElement("div");
+  feedback.className = "feedback";
+
+  item.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+
+    const letterBadge = document.createElement("span");
+    letterBadge.textContent = letters[i];
+    letterBadge.style.background = "#2563eb";
+    letterBadge.style.color = "white";
+    letterBadge.style.borderRadius = "6px";
+    letterBadge.style.padding = "4px 8px";
+    letterBadge.style.fontWeight = "bold";
+    letterBadge.style.minWidth = "28px";
+    letterBadge.style.textAlign = "center";
+
+    const textSpan = document.createElement("span");
+    textSpan.innerHTML = opt;
+
+    btn.appendChild(letterBadge);
+    btn.appendChild(textSpan);
+
+    btn.onclick = () => {
+      feedback.className = "feedback";
+      if (i === item.answer) {
+        feedback.textContent = "🎉 Correct!";
+        feedback.classList.add("correct");
+      } else {
+        feedback.textContent = "❌ Try again!";
+        feedback.classList.add("wrong");
+      }
+    };
+
+    optionsDiv.appendChild(btn);
+  });
+
+  left.appendChild(title);
+  left.appendChild(optionsDiv);
+  left.appendChild(feedback);
+
+  const right = document.createElement("div");
+  right.className = "question-right";
+
+  const videoBox = document.createElement("div");
+  videoBox.className = "video-box";
+
+  const iframe = document.createElement("iframe");
+  iframe.src = item.video;
+  iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+
+  videoBox.appendChild(iframe);
+  right.appendChild(videoBox);
+
+  qDiv.appendChild(left);
+  qDiv.appendChild(right);
+  quizDiv.appendChild(qDiv);
+});
+</script>
+
+</body>
+</html>

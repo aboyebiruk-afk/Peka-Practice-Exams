@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chemistry Unit One – MCQ Quiz</title>
+
+
+  <link rel="stylesheet" href="Style.css" />  
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<div class="quiz-container">
+<h1>⚡ Chemistry Unit One  Acid-Base Equilibria⚡</h1>
+<div id="quiz"></div>
+</div>
+
+<script>
+const questions = [
+  
+  {
+    "q": "1. According to the Brønsted-Lowry theory, an acid is defined as a substance that:",
+    "options": ["Donates a proton", "Accepts a proton", "Donates an electron pair", "Accepts an electron pair"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "2. Which of the following is the conjugate base of H<sub>2</sub>O?",
+    "options": ["H<sub>3</sub>O<sup>+</sup>", "OH<sup>-</sup>", "H<sub>2</sub>O<sub>2</sub>", "O<sub>2</sub><sup>-</sup>"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {                                                                          
+    "q": "3. The pH of a 0.01 M HCl solution is:",                              
+    "options": ["1", "2", "12", "13"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "4. For a weak acid HA, the acid dissociation constant (K<sub>a</sub>) is expressed as:",
+    "options": ["\\(\\left(\\frac{[H^+][A^-]}{[HA]}\\right) \\)", "<sup>[HA]</sup>&frasl;<sub>[H<sup>+</sup>][A<sup>-</sup>]</sub>", "<sup>[H<sup>+</sup>]</sup>&frasl;<sub>[A<sup>-</sup>]</sub>", "<sup>[A<sup>-</sup>]</sup>&frasl;<sub>[H<sup>+</sup>]</sub>"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "5. What is the [OH<sup>-</sup>] concentration in a solution where [H<sub>3</sub>O<sup>+</sup>] = 1.0 x 10<sup>-5</sup> M?",
+    "options": ["1.0 x 10<sup>-5</sup> M", "1.0 x 10<sup>-7</sup> M", "1.0 x 10<sup>-9</sup> M", "1.0 x 10<sup>-14</sup> M"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "6. A buffer solution is best described as a mixture that:",
+    "options": ["Neutralizes any added acid", "Resists changes in pH upon addition of small amounts of acid or base", "Always has a pH of 7", "Contains only strong acids"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "7. Which pair would form a buffer solution?",
+    "options": ["HCl and NaCl", "NaOH and NaCl", "CH<sub>3</sub>COOH and CH<sub>3</sub>COONa", "HNO<sub>3</sub> and NaNO<sub>3</sub>"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "8. During a strong acid-strong base titration, the pH at the equivalence point is:",
+    "options": ["Less than 7", "Greater than 7", "Exactly 7", "14"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "9. An acid-base indicator is typically a:",
+    "options": ["Strong acid", "Strong base", "Weak organic acid or base", "Neutral salt"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "10. The common ion effect explains why the solubility of a weak electrolyte:",
+    "options": ["Increases when a common ion is added", "Decreases when a common ion is added", "Remains unchanged", "Becomes zero"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "11. According to the Arrhenius theory, what do bases increase in concentration in an aqueous solution?",
+    "options": ["H<sup>+</sup>", "OH<sup>-</sup>", "H<sub>3</sub>O<sup>+</sup>", "Cl<sup>-</sup>"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "12. Which of the following is defined as a proton donor according to the Brønsted-Lowry concept?",
+    "options": ["Acid", "Base", "Salt", "Buffer"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "13. In the Lewis theory, a base is defined as:",
+    "options": ["Proton donor", "Proton acceptor", "Electron pair donor", "Electron pair acceptor"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "14. What is the value of K<sub>w</sub> at 25°C?",
+    "options": ["1.0 x 10<sup>-7</sup>", "1.0 x 10<sup>-14</sup>", "1.0 x 10<sup>14</sup>", "0.1"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "15. A solution with [H<sub>3</sub>O<sup>+</sup>] = 1.0 x 10<sup>-3</sup> M has a pH of:",
+    "options": ["3", "11", "7", "4"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "16. Which of the following best describes an amphiprotic species?",
+    "options": ["Can only act as an acid", "Can only act as a base", "Can act as both an acid and a base", "Is neutral in all solutions"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "17. The conjugate base of H<sub>2</sub>O is:",
+    "options": ["H<sub>3</sub>O<sup>+</sup>", "OH<sup>-</sup>", "O<sup>2-</sup>", "H<sub>2</sub>O<sub>2</sub>"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "18. If K<sub>a</sub> of a weak acid is 1.8 x 10<sup>-5</sup>, what is the pK<sub>a</sub>?",
+    "options": ["4.74", "5.26", "9.26", "1.8"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "19. A buffer solution is a mixture of:",
+    "options": ["Strong acid and strong base", "Weak acid and its conjugate base", "Strong acid and its conjugate base", "Two strong bases"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "20. Which salt solution would be basic due to hydrolysis?",
+    "options": ["NaCl", "NH<sub>4</sub>Cl", "NaCH<sub>3</sub>COO", "KCl"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "21. The point in a titration where the indicator changes color is the:",
+    "options": ["Equivalence point", "End point", "Buffer point", "Neutralization point"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "22. In the reaction BF<sub>3</sub> + NH<sub>3</sub> &rarr; F<sub>3</sub>B-NH<sub>3</sub>, BF<sub>3</sub> acts as a:",
+    "options": ["Lewis acid", "Lewis base", "Brønsted acid", "Arrhenius base"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "23. The pH of a neutral solution at 25°C is:",
+    "options": ["0", "1", "7", "14"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "24. A buffer system resists changes in pH when:",
+    "options": ["Large amounts of strong acid/base are added", "Small amounts of strong acid/base are added", "It is diluted infinitely", "It is frozen"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "25. Which of these is a diprotic acid?",
+    "options": ["HCl", "H<sub>2</sub>SO<sub>4</sub>", "HNO<sub>3</sub>", "CH<sub>3</sub>COOH"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "26. If [OH<sup>-</sup>] = 1.0 x 10<sup>-5</sup> M, the pOH is:",
+    "options": ["5", "9", "4", "10"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "27. The conjugate acid of NH<sub>3</sub> is:",
+    "options": ["NH<sub>2</sub><sup>-</sup>", "NH<sub>4</sub><sup>+</sup>", "NH<sub>3</sub><sup>+</sup>", "NH<sub>2</sub>"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "28. Strong acids completely ionize in aqueous solution to give:",
+    "options": ["H<sub>3</sub>O<sup>+</sup>", "OH<sup>-</sup>", "H<sub>2</sub>", "Neutral molecules"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "29. An indicator changes color because:",
+    "options": ["It reacts with the titrant", "Its equilibrium shifts with pH", "It is a strong electrolyte", "It creates a buffer"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "30. The common ion effect leads to:",
+    "options": ["Increased ionization of weak acids", "Decreased ionization of weak acids", "Neutralization of strong acids", "Increase in pH"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "31. A solution with pH = 2 is how many times more acidic than a solution with pH = 5?",
+    "options": ["3", "30", "1000", "100"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "32. Which Lewis acid-base reaction results in a coordinate covalent bond?",
+    "options": ["Neutralization", "Oxidation-Reduction", "Both A and B", "Neither"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "33. If pK<sub>a</sub> of an acid is 4.74, what is the K<sub>a</sub>?",
+    "options": ["1.8 x 10<sup>-5</sup>", "1.8 x 10<sup>5</sup>", "4.74 x 10<sup>-1</sup>", "10<sup>-4.74</sup>"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "34. Hydrolysis of NH<sub>4</sub>Cl produces a solution that is:",
+    "options": ["Acidic", "Basic", "Neutral", "Cannot be determined"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "35. The Henderson-Hasselbalch equation is used to calculate:",
+    "options": ["pH of a buffer", "pH of a strong acid", "K<sub>a</sub> of a strong acid", "Volume of titrant"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "36. Which of the following is not an Arrhenius acid?",
+    "options": ["HCl", "H<sub>2</sub>SO<sub>4</sub>", "CH<sub>4</sub>", "HNO<sub>3</sub>"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "37. In a titration, the titrant is placed in the:",
+    "options": ["Flask", "Beaker", "Burette", "Pipette"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "38. If [H<sub>3</sub>O<sup>+</sup>] > [OH<sup>-</sup>], the solution is:",
+    "options": ["Acidic", "Basic", "Neutral", "Amphoteric"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "39. The conjugate base of a weak acid is:",
+    "options": ["Strong", "Weak", "Neutral", "None"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "40. Which species is amphiprotic?",
+    "options": ["H<sub>2</sub>O", "HSO<sub>4</sub><sup>-</sup>", "HCO<sub>3</sub><sup>-</sup>", "All of the above"],
+    "answer": 4,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "41. What is the value of pH + pOH at 25°C?",
+    "options": ["7", "0", "14", "1"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "42. The percent ionization of a weak acid increases as:",
+    "options": ["Concentration increases", "Concentration decreases", "Common ion is added", "pH increases"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "43. Which salt forms a neutral aqueous solution?",
+    "options": ["NaCH<sub>3</sub>COO", "NH<sub>4</sub>Cl", "NaCl", "Na<sub>2</sub>CO<sub>3</sub>"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "44. A Lewis acid must have:",
+    "options": ["A lone pair", "An empty orbital", "A proton", "An OH<sup>-</sup> group"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "45. If K<sub>b</sub> of a weak base is 1.8 x 10<sup>-5</sup>, what is K<sub>a</sub> of its conjugate acid?",
+    "options": ["5.6 x 10<sup>-10</sup>", "1.8 x 10<sup>9</sup>", "1.0 x 10<sup>-14</sup>", "5.6 x 10<sup>4</sup>"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "46. The equivalence point of a strong acid-strong base titration is always:",
+    "options": ["pH 7", "pH < 7", "pH > 7", "pH 1"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "47. Which is a strong base?",
+    "options": ["NH<sub>3</sub>", "NaOH", "CH<sub>3</sub>NH<sub>2</sub>", "H<sub>2</sub>O"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "48. What is the definition of pOH?",
+    "options": ["-log[H<sub>3</sub>O<sup>+</sup>]", "-log[OH<sup>-</sup>]", "log[OH<sup>-</sup>]", "-log[K<sub>w</sub>]"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "49. Which indicator is often used in strong acid-strong base titrations?",
+    "options": ["Phenolphthalein", "Methyl orange", "Litmus", "All of the above"],
+    "answer": 4,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "50. Buffer capacity is highest when:",
+    "options": ["pH = pK<sub>a</sub>", "pH is very high", "pH is very low", "No buffer is present"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "51. A species that accepts an electron pair is a:",
+    "options": ["Lewis acid", "Lewis base", "Brønsted acid", "Arrhenius acid"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "52. At equivalence point, moles of base equal:",
+    "options": ["Moles of acid", "Moles of salt", "Initial concentration", "Final concentration"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "53. Which of the following is not a Brønsted-Lowry acid?",
+    "options": ["HCl", "H<sub>2</sub>O", "NH<sub>4</sub><sup>+</sup>", "OH<sup>-</sup>"],
+    "answer": 4,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "54. The pH of a 0.01M NaOH solution is:",
+    "options": ["2", "12", "13", "1"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "55. The dissociation constant K<sub>a</sub> represents:",
+    "options": ["Strength of acid", "Strength of base", "Concentration", "Neutralization"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "56. Which of the following increases the pH?",
+    "options": ["Adding acid", "Adding base", "Adding pure water", "Adding salt"],
+    "answer": 2,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "57. A solution is acidic if:",
+    "options": ["pH < 7", "pH > 7", "pOH < 7", "pOH = 7"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "58. The common ion in a buffer of acetic acid and sodium acetate is:",
+    "options": ["H<sup>+</sup>", "OH<sup>-</sup>", "CH<sub>3</sub>COO<sup>-</sup>", "Na<sup>+</sup>"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "59. Which of these is a weak base?",
+    "options": ["KOH", "Ca(OH)<sub>2</sub>", "NH<sub>3</sub>", "LiOH"],
+    "answer": 3,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+    "q": "60. Auto-ionization of water produces:",
+    "options": ["H<sub>3</sub>O<sup>+</sup> and OH<sup>-</sup>", "H<sub>2</sub> and O<sub>2</sub>", "H<sub>2</sub>O<sub>2</sub>", "H<sub>2</sub> and OH<sup>-</sup>"],
+    "answer": 1,
+    "video": "https://www.youtube.com/embed/OY6L3b0t8rI"
+  }
+
+
+]
+
+
+</script>
+<script src="quize-engine.js"></script>
+</body>
+</html>

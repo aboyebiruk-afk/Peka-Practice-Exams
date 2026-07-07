@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<meta charset="UTF-8">
+<title>Exam Portal</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        background: #e1e1e1;
+        color: #1f2937;
+    }
+
+    /* HEADER */
+    /* HEADER WITH BACKGROUND IMAGE */
+.header {
+    position: relative;
+    padding: 30px 50px;   /* more height for image */
+    background-image: url("img.11.png");
+    background-size: cover;
+    background-position: center;
+    color: rgb(207, 207, 223);
+    border-bottom: 1px solid #e5e7eb;
+    font-style: italic;
+}
+
+/* Dark overlay for readability */
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Keep text above overlay */
+.header h1,
+.header p {
+    position: relative;
+    z-index: 1;
+}
+
+
+    .header h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .header p {
+        margin-top: 6px;
+        color: #6b7280;
+    }
+
+    /* MAIN LAYOUT */
+    .main {
+        display: flex;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 40px;
+        gap: 40px;
+    }
+
+    /* LEFT PANEL – GRADE */
+    .left-panel {
+        width: 35%;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .grade-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .card.active {
+        border-color: #2563eb;
+    }
+
+    .badge {
+        background: #2563eb;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .card h3 {
+        margin: 10px 0 5px;
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #6b7280;
+    }
+
+    /* RIGHT PANEL */
+    .right-panel {
+        
+        width: 65%;
+    background: 
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url("img.10.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    min-height: 380px;
+    animation: fadeIn 0.6s ease;
+    transition: background 0.4s ease;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .option-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .option-card {
+        background:linear-gradient(135deg,#2E3192, #1BFFFF);
+        border-radius: 14px;
+        padding: 25px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .option-card:hover {  
+        background: #eef2ff;
+        border-color: #2563eb;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .card {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(58, 14, 14);
+    position: relative;
+}
+
+/* Dark overlay for text readability */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,#ee3939, #0088ff);
+    border-radius: 16px;
+}
+
+.card * {
+    position: relative;
+    z-index: 1;
+}
+.grade-9 {
+    background-image: url("img.10.png");
+}
+
+.grade-10 {
+    background-image: url("images/grade10.jpg");
+}
+
+.grade-11 {
+    background-image: url("images/grade11.jpg");
+}
+
+.grade-12 {
+    background-image: url("images/grade12.jpg");
+}
+/* IMAGE SECTION INSIDE SUBJECT & CHAPTER BOX */
+.panel-image {
+    height: 180px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    margin-bottom: 25px;
+    color: white;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+.panel-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Title text above overlay */
+.panel-image h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+.subject-image {
+    background-image: url("img.11.png");
+}
+
+.chapter-image {
+    background-image: url("img.12.png");
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Welcome to your exam page</h1>
+    <p>Please select the Grade, Subject, and Chapter to begin your session. Let's start!</p>
+    
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- LEFT – GRADES -->
+    <div class="left-panel">
+        <div class="section-title">Choose Grade</div>
+
+        <div class="grade-grid">
+            <div class="card" onclick="selectGrade(this, 9)">
+               
+                <h3>Grade 9</h3>
+               
+            </div>
+
+            <div class="card" onclick="selectGrade(this, 10)">
+                
+                <h3>Grade 10</h3>
+             
+            </div>
+
+            <div class="card" onclick="selectGrade(this, 11)">
+                
+                <h3>Grade 11</h3>
+                
+            </div>
+
+            <div class="card" onclick="selectGrade(this, 12)">
+                
+                <h3>Grade 12</h3>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT – SUBJECT & CHAPTER -->
+    <div class="right-panel">
+
+        <!-- SUBJECT -->
+        <div id="subjectSection" class="hidden">
+
+    <!-- IMAGE HEADER -->
+    <div class="panel-image subject-image">
+        <h2 id="subjectTitle"></h2>
+    </div>
+
+    <div class="option-grid">
+        <div class="option-card" onclick="selectSubject('Physics')">Physics</div>
+        <div class="option-card" onclick="selectSubject('Mathematics')">Mathematics</div>
+        <div class="option-card" onclick="selectSubject('Chemistry')">Chemistry</div>
+    </div>
+</div>
+
+        <!-- CHAPTER -->
+        <!-- CHAPTER -->
+<div id="chapterSection" class="hidden">
+
+    <!-- IMAGE HEADER -->
+    <div >
+        <h2 id="chapterTitle"></h2>
+    </div>
+
+    <div class="option-grid">
+        <div class="option-card">Chapter 1</div>
+        <div class="option-card">Chapter 2</div>
+        <div class="option-card">Chapter 3</div>
+        <div class="option-card">Chapter 4</div>
+        <div class="option-card">Chapter 5</div>
+        <div class="option-card">Chapter 6</div>
+        <div class="option-card">Chapter 7</div>
+    </div>
+</div>
+
+
+<script>
+
+const data = {
+  9: {
+    Physics: [
+      { name: "Chapter 1", page: "Physics And Human Society ChOne.html" },
+      { name: "Chapter 2", page: "Physical Quantities Ch2.html" },
+      { name: "Chapter 3", page: "Motion in a straight line Ch3.html" },
+      { name: "Chapter 4", page: "Force, Work, Energy and Power Ch4.html" },
+      { name: "Chapter 5", page: "Simple Machine Ch5.html" },
+      { name: "Chapter 6", page:"Mechanical Oscillation and sound wave Ch6.html"},
+      { name: "Chapter 7", page:"Temperature and Thermometry Ch7.html"}
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "Further on sets Ch1.html" },
+      { name: "Chapter 2", page: "The number system Ch2.html" },
+      { name: "Chapter 3", page: "Solving equations Ch3.html" },
+      { name: "Chapter 4", page: "Solving inequalities Ch4.html" },
+      { name: "Chapter 5", page: "Introduction to Trigonometry Ch5.html" },
+      { name: "Chapter 6", page: "Regular polygons Ch6.html" },
+      { name: "Chapter 7", page: "Congruency and Similarity Ch7.html" },
+      { name: "Chapter 8", page: "Vectors in two dimentions Ch8.html" },
+      { name: "Chapter 9", page: "Statistics and probability Ch9.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "Chemistry and its importance Ch1.html" },
+      { name: "Chapter 2", page: "Measurement and scientific methods Ch2.html" },
+      { name: "Chapter 3", page: "Structure of the atom Ch3.html" },
+      { name: "Chapter 4", page: "Periodic classification of elements Ch4.html" },
+      { name: "Chapter 5", page: "Chemical bonding Ch5.html" },
+      
+    ]
+  },
+
+  10: {
+    Physics: [
+      { name: "Chapter 1", page: "Vector Quantities Ch1.html" },
+      { name: "Chapter 2", page: "Uniformly accelerated motion Ch2.html" },
+      { name: "Chapter 3", page: "Elasticity and static equilibrium of rigid body Ch3.html" },
+      { name: "Chapter 4", page: "Static and current electricity Ch4.html" },
+      { name: "Chapter 5", page: "Magnetism Ch5.html" },
+      { name: "Chapter 6", page: "Electromagnetic waves and geometrical optics Ch6.html"}
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "Chemical reactions and stochiometry Ch1.G9.html" },
+      { name: "Chapter 2", page: "Solutions Ch2.G9.html" },
+      { name: "Chapter 3", page: "Important inorganic compounds Ch3.G9.html" },
+      { name: "Chapter 4", page: "Energy changes and electrochemistry Ch4.G9.html" },
+      { name: "Chapter 5", page: "Metals and nonmetals Ch5.G9.html" },
+      { name: "Chapter 6", page: "Hydrocarbons and their natural sources Ch6.G9.html" }
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "Relation and functions Ch1.G10.html" },
+      { name: "Chapter 2", page: "Polynomial functions Ch2.G10.html" },
+      { name: "Chapter 3", page: "Exponential and logarithmic function Ch3.G10.html" },
+      { name: "Chapter 4", page: "Trigonometric functions Ch.4.G10.html" },
+      { name: "Chapter 5", page: "Circles Ch5.G10.html" },
+      { name: "Chapter 6", page: "Solid figures Ch6.G10.html" },
+      { name: "Chapter 7", page: "Coordinate geometry Ch7.G10.html" }
+    ]
+  },
+
+  11: {
+    Physics: [
+      { name: "Chapter 1", page: "Physics and human society Ch1.html" },
+      { name: "Chapter 2", page: "Vectors Ch2.html" },
+      { name: "Chapter 3", page: "Motion in one and two dimensions Ch3.html" },
+      { name: "Chapter 4", page: "Dynamics Ch4.html" },
+      { name: "Chapter 5", page: "Heat conduction and calorimetry Ch5.html" },
+      { name: "Chapter 6", page: "Electrostatics and Electric circuit.html" },
+      { name: "Chapter 7", page: "Nuclear Physics Ch7.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "Atomic structure and periodic properties of an element Ch1.html" },
+      { name: "Chapter 2", page: "Chemical bonding Ch2.html" },
+      { name: "Chapter 3", page: "Physical states of matter Ch3.html" },
+      { name: "Chapter 4", page: "Chemical kinetics Ch4.html" },
+      { name: "Chapter 5", page: "Chemical equilibrium Ch5.html" },
+      { name: "Chapter 6", page: "Some important Oxygen-Containing organic compounds Ch6.html" }
+      
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "Relation and function Ch1.html" },
+      { name: "Chapter 2", page: "Rational expressions and rational functions Ch2.html" },
+      { name: "Chapter 3", page: "Matrices.html" },
+      { name: "Chapter 4", page: "Determinants and their properties Ch4.html" },
+      { name: "Chapter 5", page: "Vectors Ch5.html" },
+      { name: "Chapter 6", page: "Transformations of the plane Ch6.html"},
+      { name: "Chapter 7", page: "Statistics Ch7.html"},
+      { name: "Chapter 8", page: "Probability Ch8.html"}
+    ]
+  },
+
+  12: {
+    Physics: [
+      { name: "Chapter 1", page: "Application of Physics in other fields.html" },
+      { name: "Chapter 2", page: "Two dimentional motion.html" },
+      { name: "Chapter 3", page: "Fluid mechanics.html" },
+      { name: "Chapter 4", page: "Electromagnetism.html" },
+      { name: "Chapter 5", page: "Basics of electronics.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "Acid Base equilibria.html" },
+      { name: "Chapter 2", page: "Ionic equilibria of week acid and base.html" },
+      { name: "Chapter 3", page: "Industrial chemistry.html" },
+      { name: "Chapter 4", page: "Polymers.html" },
+      { name: "Chapter 5", page: "Introduction to environmental chemistry.html" }
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "Sequence and Series.html" },
+      { name: "Chapter 2", page: "Introduction to calculus Ch2.html" },
+      { name: "Chapter 3", page: "Statstics Ch3.html" },
+      { name: "Chapter 4", page: "Introduction to linear programming Ch4.html" },
+      { name: "Chapter 5", page: "Mathematical applications in business.html" }
+    ]
+  }
+};
+
+
+
+
+let selectedGrade = null;
+let selectedSubject = null;
+
+function selectGrade(card, grade) {
+  selectedGrade = grade;
+
+  document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+  card.classList.add("active");
+
+  const subjectGrid = document.querySelector("#subjectSection .option-grid");
+  subjectGrid.innerHTML = "";
+
+  Object.keys(data[grade]).forEach(subject => {
+    const btn = document.createElement("div");
+    btn.className = "option-card";
+    btn.textContent = subject;
+    btn.onclick = () => selectSubject(subject);
+    subjectGrid.appendChild(btn);
+  });
+
+  document.getElementById("subjectTitle").innerText =
+    `Grade ${grade} – Select Subject`;
+
+  document.getElementById("subjectSection").classList.remove("hidden");
+  document.getElementById("chapterSection").classList.add("hidden");
+}
+
+function selectSubject(subject) {
+  selectedSubject = subject;
+
+  const chapterGrid = document.querySelector("#chapterSection .option-grid");
+  chapterGrid.innerHTML = "";
+
+  data[selectedGrade][subject].forEach(chapter => {
+    const btn = document.createElement("div");
+    btn.className = "option-card";
+    btn.textContent = chapter.name;
+    btn.onclick = () => openChapter(chapter.page);
+    chapterGrid.appendChild(btn);
+  });
+
+  document.getElementById("chapterTitle").innerText =
+    `Grade ${selectedGrade} / ${subject} – Select Chapter`;
+
+  document.getElementById("chapterSection").classList.remove("hidden");
+}
+
+function openChapter(page) {
+  // SAVE CURRENT STATE
+  sessionStorage.setItem("examState", JSON.stringify({
+    grade: selectedGrade,
+    subject: selectedSubject
+  }));
+
+  // GO TO CHAPTER PAGE
+  window.location.href = page;
+}
+
+window.addEventListener("load", () => {
+  const savedState = sessionStorage.getItem("examState");
+
+  if (!savedState) return;
+
+  const { grade, subject } = JSON.parse(savedState);
+
+  selectedGrade = grade;
+  selectedSubject = subject;
+
+  // Highlight grade card
+  document.querySelectorAll(".card").forEach(card => {
+    if (card.innerText.includes(grade)) {
+      card.classList.add("active");
+    }
+  });
+
+  // Rebuild subject section
+  const subjectGrid = document.querySelector("#subjectSection .option-grid");
+  subjectGrid.innerHTML = "";
+
+  Object.keys(data[grade]).forEach(sub => {
+    const btn = document.createElement("div");
+    btn.className = "option-card";
+    btn.textContent = sub;
+    btn.onclick = () => selectSubject(sub);
+    subjectGrid.appendChild(btn);
+  });
+
+  document.getElementById("subjectTitle").innerText =
+    `Grade ${grade} – Select Subject`;
+
+  document.getElementById("subjectSection").classList.remove("hidden");
+
+  // Auto-open selected subject & chapters
+  selectSubject(subject);
+});
+
+</script>
+
+</body>
+</html>

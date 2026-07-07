@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>G-12 Mathematics Unit One – MCQ Quiz</title>
+
+<link rel="stylesheet" href="Style.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<div class="quiz-container">
+<h1>⚡ Mathematics Unit One ⚡</h1>
+<div id="quiz"></div>
+</div>
+
+<script>
+  
+const questions = [
+      {
+        q: "1. The 10<sup>th</sup> term of the sequence 1, 1, 2, 3, 5, 8,...is",
+        options: ["25", "34", "21", "55"],
+        answer: 3,
+        video: "https://youtu.be/rAO5LVt0-7A"
+      },
+      {
+        q: "2. If  a<sub>1</sub> = 0, a<sub>2</sub> = 1 and a<sub>n</sub> = \\(\\left(\\frac{(a_{n-1}+ a_{n-2})^{n-1}}{n}\\right) \\) for n &ge; 3, then a<sub>4</sub> is equal to",
+        options: ["<math><mfrac><mi>7</mi><mi>9</mi></mfrac></math>", "<math><mfrac><mi>16</mi><mi>27</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>9</mi></mfrac></math>", "<math><mfrac><mi>25</mi><mi>324</mi></mfrac></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q: "3.Which of the following is the general term a<sub>n</sub> of the sequence 2, 4, 16, 256,....?",
+        options: ["n", "2<sup>2 <sup>n-1</sup></sup> ", "n<sup>n</sup>", "n<sup>2</sup>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q: "4. 2x + 5, 3x and m from geometric sequence with common ratio of 4, then the value of m is",
+        options: ["-4", "-12", "-16", "-48"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q: "5. The population of a certain town is increasing at rate of 2% per year. If the population is currently 100,000, what will the ppopulation be 11 years from now?",
+        options: ["10<sup>5</sup>(1.02)<sup>10</sup>", "10<sup>5</sup>(0.98)<sup>11</sup>", "10<sup>5</sup>(1.02)<sup>12</sup>", "10<sup>5</sup>(1.02)<sup>11</sup>"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q: "6. If a geometric progression G<sub>2</sub> = -10, G<sub>4</sub> = -8/5 and G5 is positive, then which of the following is the general formula for G<sub>n</sub>?",
+        options:["\\( 25\\left(-\\frac{2}{5}\\right)^{n-1} \\)", "\\( -25\\left(\\frac{2}{5}\\right)^{n-1} \\)","\\(\\left(\\frac{2^{n-1}}{(-5)^{n-2}}\\right) \\)",    "\\(25\\left(-\\frac{2}{5}\\right)^{n} \\)"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q:"7. Consider the following sequence of numbers 1, 3, 1, 7, 1, 11, 1, 15,...... What is the sum of the first 10 terms of the sequence?",
+        options:["45", "60", "56", "40"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q:"8. The sum of the thirs and the fifth terms of an arithmetic sequence is twice of the difference between the eleventh and the sixth term. If the sum of the first ten terms of the sequence is 25. Then, what is the common difference?",
+        options:["<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>", "<math><mfrac><mi>3</mi><mi>7</mi></mfrac></math>", "<math><mfrac><mi>5</mi><mi>13</mi></mfrac></math>", "<math><mfrac><mi>10</mi><mi>13</mi></mfrac></math>"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q:"9. The partial sum of an arithmetic series is 100 times the first term, while the last is 9 times the first term. What is the number of terms in the series if the first term is not equal to zero?",
+        options:["20", "100", "50", "30"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+{
+        q:"10. If a<sub>1</sub> = 2, a<sub>2</sub> = 6,  a<sub>3</sub> = 10,  a<sub>4</sub> = 14,......, then \\(\\sum_{i=1}^{100} a_n \\) =__________",
+
+        options:["20,020", "20,200", "22,000", "20,000"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+{       q:"11. What is the sum of the infinite series \\(\\sum_{i=0}^{&infin;} \\)5\\(\\left(\\frac{2^k+5^k}{10^k}\\right) \\)?",
+        options: ["15", "<math><mfrac><mi>25</mi><mi>4</mi></mfrac></math>", "5", "<math><mfrac><mi>65</mi><mi>4</mi></mfrac></math>"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+       q:"12. A ball bounces up two-thirds of the height from which it falls. If it is dropped from a height of 90 meters, what is the total vertical distance the ball has traveled when it hits the ground for the sixth time?",
+        options: ["402.59 m", "120.5 m", "102.6 m", "450 m"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"13 let f<sub>n</sub> = log\\(\\left(\\frac{n}{n+1}\\right) \\), then \\(\\sum_{n=1}^{999} f_n \\) is equal to",
+        options: ["-10", "-3", "<math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>", "1000"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"14. What is the value of x so that the series 1-x + x<sup>2</sup> - x<sup>3</sup> + x<sup>4</sup> - x<sup>5</sup> + ...... converges to <math><mfrac><mi>9</mi><mi>7</mi></mfrac></math>?",
+        options: ["-<math><mfrac><mi>2</mi><mi>9</mi></mfrac></math>", "-<math><mfrac><mi>1</mi><mi>9</mi></mfrac></math>", "-2", "<math><mfrac><mi>1</mi><mi>7</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{ 
+      q:"15. A ball is dropped from a height of 100 meters. Each time it hits the ground, it bounces back to three-fourths of the height from which it fell. What is the total distance coverd by the ball before it comes to rest?",
+        options: ["200 m", "400 m", "300 m", "700 m"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"16. if the sum of the first consecutive terms of an arithmetic progression {A<sub>n</sub>}, with A<sub>n</sub> > 0 for all n is 24 and the sum of their squares is 210, then what is the sum S<sub>n</sub> of the first n terms?",
+        options: ["\\( \\frac{3n^{2}+7n}{2} \\)", "\\( \\frac{-3n^{2}+7n}{2} \\)", "3n<sup>2</sup> - 7n", "2n<sup>2</sup> + 1"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"17. Which one of the following is a convergent sequence?",
+        options:["\\( \\left\\{ \\frac{1+2^{n}}{3^{n}} \\right\\} \\)", "\\( \\left\\{ \\frac{1}{n} + sin(n) \\right\\} \\)","\\( \\left\\{ \\frac{1-3^{n}}{2^{n}} \\right\\} \\)","\\( \\left\\{ \\frac{(-1)^{n}}{2} \\right\\} \\)"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI",
+        },
+{
+      q: "18. If the sum of 40 arithmetic means between two number is 120, then the sum of 50 arithmetic means between them is equal to:-",
+        options: ["130", "160", "150", "120"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q: "19. If \\(\\sum_{k=1}^{n}(2-3k)=-330\\), then the value of n is:-",
+        options: ["44", "16", "15", "14"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q: "20. The second and the fifth terms of a geometric progression are <math><mfrac><mi>-1</mi><mi>2</mi></fract></math> and <math><mfrac><mi>1</mi><mi>16</mi></fract></math> respectively. What is the sum of the first eight terms of the sequence",
+        options: ["<math><mfrac><mi>128</mi><mi>85</mi></fract></math>", "-<math><mfrac><mi>255</mi><mi>256</mi></fract></math>", "<math><mfrac><mi>85</mi><mi>128</mi></fract></math>", "<math><mfrac><mi>256</mi><mi>255</mi></fract></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},    
+{
+      q:"21. Every day a person saves an amount which is 5 more than the amount he saved on the previous day. His target is to save 3225 in 30 days. How much must be the starting saving to meet the target?",
+        options: ["50", "25", "35", "60"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+       q:"22.The value of the series \\(\\sum_{n=1}^{&infin;} \\) <math><mfrac><mi>(-1)</mi><mi>(3^n)^2</mi></mfrac></math> is:-",
+        options: ["<math><mfrac><mi>9</mi><mi>8</mi></mfrac></math>", "<math><mfrac><mi>9</mi><mi>10</mi></mfrac></math>", "-<math><mfrac><mi>9</mi><mi>10</mi></mfrac></math>", "-<math><mfrac><mi>1</mi><mi>10</mi></mfrac></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"23. Which one of the following is a convergent sequence?",
+        options: ["\\( \\left\\{ \\frac{1}{(2^{1-n})(3^{1-2n})} \\right\\} \\)", "{2<sup>1-2n</sup>}", "\\( \\left\\{ \\left(\\frac{5}{3}\\right)^{n+1} \\right\\} \\)", "\\( \\left\\{ln \\left(\\frac{1}{n}\\right) \\right\\} \\)"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"25. For x>0, if log<sub>2</sub>x, log<sub>32</sub>x and log<sub>x</sub>16, are consecutive terms of a geometric sequence, then what is the value of x?",
+        options: ["2<sup>4</sup>", "2<sup>6</sup>", "2<sup>8</sup>", "2<sup>10</sup>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"26. What is the sum of the infinite series <math><mfrac><mi>1</mi><mi>5</mi></mfrac></math> - <math><mfrac><mi>2</mi><mi>25</mi></mfrac></math> + <math><mfrac><mi>4</mi><mi>125</mi></mfrac></math> - <math><mfrac><mi>8</mi><mi>625</mi></mfrac></math> + ...... ?",
+        options: ["<math><mfrac><mi>1</mi><mi>7</mi></mfrac></math>", "<math><mfrac><mi>5</mi><mi>3</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>", "<math><mfrac><mi>2</mi><mi>5</mi></mfrac></math>"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"27.There are 15 terms in an arithmetic progression. Its first term is 5 and their sum is 390. Then the 8<sup>th</sup> term is:-",
+        options: ["27", "26", "25", "24"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"28. A certain item loses one-tenth of its value each year. If the item is worth Birr 28,000 today, how much will it be worth 4 years from now?",
+        options: ["Birr 28,000(0.9)<sup>3</sup>", "Birr 28,000(1.1)<sup>3</sup>", "Birr 28,000(0.9)<sup>4</sup>", "Birr 28,000(1.1)<sup>4</sup>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"  
+},
+{
+      q:"29.   \(\left\{ {\frac{(n^2 + 1)(1 - 2n)}{3 - n^3}} \right\}_{n=1}^{\infty} \)",
+        options: ["&infin;", "-3", "2", "-<math><mfrac><mi>2</mi><mi>3</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+}, 
+{
+      q:"30. Which one of the following represents a geometric sequence?",
+        options: ["-2, 4, -8, 12, -16,...", "1, 2, 4, 6, 8,...", "2, 1, <math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>, <math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>, <math><mfrac><mi>1</mi><mi>8</mi></mfrac></math>,...", "<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>, <math><mfrac><mi>2</mi><mi>3</mi></mfrac></math>, <math><mfrac><mi>3</mi><mi>4</mi></mfrac></math>, <math><mfrac><mi>4</mi><mi>5</mi></mfrac></math>,..."],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      
+},                         
+{
+      q:"31. What is the sum of the  series \\(\\sum_{n=1}^{&infin;}\\)(-1)<sup>n</sup>3<sup>-3n</sup> ?",
+        options: ["-<math><mfrac><mi>1</mi><mi>9</mi></mfrac></math>", "-<math><mfrac><mi>1</mi><mi>27</mi></mfrac></math>", "-<math><mfrac><mi>1</mi><mi>28</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>27</mi></mfrac></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"32. What is the sum of all multiples of 11 between 20 and 300?",
+        options: ["319", "4,417", "297", "4,147"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"33. Which of the following is not a convergent sequence?",
+        options: ["\\( \\left\\{ \\frac{2-3^{n}}{5^{n}} \\right\\} \\)", "\\( \\left\\{ \\frac{2}{n^{n}} \\right\\} \\)", "\\( \\left\\{ \\frac{3n+6}{2n} \\right\\} \\)", "\\( \\left\\{ \\frac{3^{n}}{1+2^{n}} \\right\\} \\)"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+ {
+      q:"34. In a geometric sequence with G<sub>3</sub> = <math><mfrac><mi>1</mi><mi>9</mi></mfrac></math> and G<sub>5</sub> = 27, then which of the following is true?",
+        options: ["r=<math><mfrac><mi>1</mi><mi>9</mi></mfrac></math>", "G<sub>1</sub> = <math><mfrac><mi>1</mi><mi>729</mi></mfrac></math>", "the sequence is convergent", "G<sub>n</sub> =<math><mfrac><mi>1</mi><mi>9n +1</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"35. If a<sub>1</sub> = -2, a<sub>n</sub> = <math><mfrac><mi>1</mi><msub><mi>a</mi><mrow><mi>n</mi><mo>-</mo><mi>1</mi></mrow></msub></mfrac></math>, n&ge;2, then the fourth term is;",
+        options: ["-2", "-<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>", "-1", "<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"36. If \\(\\sum_{k=1}^{&infin;}\\)3<sup>kr</sup> = <math><mfrac><mi>1</mi><mi>8</mi></mfrac></math>, then r is;",
+        options:["-2","-1","3","-3"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"38. the n<sup>th</sup> term of the sequence -4, 9, -16, 25......is;",
+        options:["a<sub>n</sub> = (-2)<sup>n+1</sup>","a<sub>n</sub> = (-1)<sup>n</sup>(n+1)<sup>2</sup>","a<sub>n</sub> = (-1)<sup>n-1</sup>n<sup>2</sup>","a<sub>n</sub> = (-1)<sup>n</sup>n<sup>2</sup>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+  {
+      q:"39. len n, 2n<sup>2</sup>, <math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>n<sup>2</sup>,......be consecutive terms of a geometric sequence then what is the common ratio r ?",
+        options:["<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>8</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+      q:"40. The sum of the first 10 terms of the arithmetic sequence ln 1, ln 2, ln 4,...is;",
+        options:["45ln 2","9ln 2","10ln 2","90"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },   
+  {
+      q:"41. If a<sub>n</sub> denotes the n<sup>th</sup> term of the series 2 + 3 + 6 + 11 + 18 +......., then a<sub>80</sub> is:",
+        options:["79<sup>2</sup> - 2","79<sup>2</sup> + 2","80<sup>2</sup> - 1","80<sup>2</sup> + 2"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+      q:"42. The maximum partial sum of the sequence 12, 9, 6, 3,.....is;",
+        options:["35","20","60","30"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+  {
+      q:"43. The sum of 0.5-0.3+0.05-0.03+0.005-0.003+......is equal to;",
+        options:["<math><mfrac><mi>2</mi><mi>9</mi></mfrac></math>","0","<math><mfrac><mi>4</mi><mi>7</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+  },
+{
+      q:"44. The sum \\(\\sum_{k=0}^{&infin;}\\)(cos(k&pi;)) , is equal to",
+        options:["-1","0","1","&infin;"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{     q:"45. The 5<sup>th</sup> term of an geometric progression is 2, then the product of the first 9 terms is:",
+        options:["2<sup>8</sup>","2<sup>7</sup>","2<sup>9</sup>","2<sup>10</sup>"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+
+},
+{
+      q:"46. If the first term of a geometric progression is <math><mroot><mi>m</mi><mn>3</mn></mroot></math> and the third term is <math><msqrt><mi>m</mi></msqrt></math>, what is the 13<sup>th</sup> term of the progression?",
+        options:["m","m<sup>2</sup>","<math><mroot><msup><mi>m</mi><mn>5</mn></msup><mn>3</mn></mroot></math>","<math><mroot><msup><mi>m</mi><mn>4</mn></msup><mn>3</mn></mroot></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"47. If {a<sub>n</sub>} is a sequence such that a<sub>1</sub> =2 and  a<sub>n+1</sub> = a<sub>n</sub> + 4 for all n &ge; 1 then \\(\\sum_{n=1}^{35}\\)a<sub>n</sub> is equal to:",
+        options:["2460","2458","2450","2442"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+}, 
+{ 
+      q:"48. The population of certain country is cyrrently 80 million with growth rate of 20% per year. <br> <strong>Given</strong> (0.02)<sup>9</sup> = 5.12 x 10<sup>-16</sup> <br> &emsp;&emsp;&emsp;(0.02)<sup>10</sup> = 1.024 x 10<sup>-17</sup> <br> &emsp;&emsp;&emsp;(1.02)<sup>9</sup> = 1.19 and (1.02)<sup>10</sup> = 1.22. which of the following is the best approximation of the population after 10 years(in millions)?",
+        options:["81.9 million","86.8 million ","95.2 million","97.6 million  "],
+        answer: 3,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+{
+      q:"49. What is the sum of the series \\(\\sum_{n=1}^{&infin;}\\)\\(\\left(\\frac{2^{2n+1}}{5^{n-1}}\\right)\\) ", //UEE
+        options: ["40","50","30","60"], 
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+},
+    {
+      q:"50. What is the value of the sum: \\(\\sum_{n=1}^{&infin;}\\)\\(\\left(\\frac{2^{n}+5^{n}}{10^{n}}\\right) \\)",//UEE
+        options: ["0.325","<math><mfrac><mi>5</mi><mi>4</mi></mfrac></math>","<math><mfrac><mi>37</mi><mi>9</mi></mfrac></math>","1"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    },
+    {
+      q:"51. What is the sum of all multipe of 4 that are between 30 and 301?",
+        options: ["12,882","11,288","6,288","6,882"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    },
+    {
+      q:"52. Hanna deposits Birr 6000 in a bank account that earns an annual interest rate of 8%. Find the amount she has at the end of 4<sup>th</sup> year and n<sup>th</sup> year ", //Extreme page 504
+        options: ["Birr 6480 and 6000(1.08)<sup>n</sup>","Birr 6998 and 6000(1.28)<sup>n</sup>","Birr 8,162 and 6000(1.08)<sup>n</sup>","Birr 8,162 and 6000(1.28)<sup>n</sup>"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    },
+    {
+      q:"52. What is the sum of the series \\(\\sum_{n=0}^{&infin;}\\)\\(\\left(\\frac{5}{2^{n}}-\\frac{1}{3^{n}}\\right) \\)",//Extreme page 514
+        options: ["<math><mfrac><mi>21</mi><mi>2</mi></mfrac></math>","<math><mfrac><mi>4</mi><mi>5</mi></mfrac></math>","<math><mfrac><mi>17</mi><mi>2</mi></mfrac></math>","<math><mfrac><mi>13</mi><mi>1320</mi></mfrac></math>"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    }, 
+    {
+      q:"53 What is the sum of the repeating decimal 0.25, 0.255, 0.2555...?", //Extreme page 516
+        options: ["<math><mfrac><mi>5</mi><mi>9</mi></mfrac></math>","<math><mfrac><mi>8</mi><mi>9</mi></mfrac></math>","<math><mfrac><mi>23</mi><mi>90</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>10</mi></mfrac></math>"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    },
+    {
+      q:"54. Suppose {a<sub>n</sub>} is an arithmetic progession such that a<sub>a</sub>=21 and a<sub>10</sub>=66 then a<sub>2</sub> is equal to:", //Extreme page 522
+        options: ["-6","-15","3","9"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    },
+    {
+      q:"55. The sum of the series \\(\\sum_{n=1}^{&infin;}\\)x<sup>2n-1</sup> is <math><mfrac><mi>3</mi><mi>8</mi></mfrac></math>. What is the value of x?", //Extreme page 517
+        options: ["<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>","<math><mfrac><mi>1</mi><mi>5</mi></mfrac></math>"],
+        answer: 1, 
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+    }
+
+   
+    
+]
+</script>
+<script src="quize-engine.js"></script>
+</body>
+</html>
+  
+
+
+
+

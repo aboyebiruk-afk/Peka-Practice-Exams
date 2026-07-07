@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>G-12 Mathematics Unit Two – MCQ Quiz</title>
+
+<link rel="stylesheet" href="Style.css" /> 
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<div class="quiz-container">
+<h1>⚡ Mathematics Unit Two ⚡</h1>
+<div id="quiz"></div>
+</div>
+
+<script>
+const questions = [
+      {
+        q: "1. What is the slop of secant line to the graph of the function f(x) = 2x<sup>3</sup> + 3x - 5 over the interval [1, 3]?",//text book p660
+        options: ["25", "34", "27", "55"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/OY6L3b0t8rI"
+      },
+      {
+        q:"2. What is the gradiant of tangent line to the graph of the function f(x)=3x<sup>2</sup> - 5x + 4 at the point where x = 2?",//text book p665
+        options: ["7", "5", "3", "9"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      }, 
+      {
+        q:"3. What is the gradiant of tangent line to the graph of <math><msqrt><mi>x</mi></msqrt></math> at the point where x = 9?",//text book p670
+        options: ["<math><mfrac><mi>1</mi><mi>6</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      }, 
+      {
+        q:"4. What is the derivative of a function f(x) = <math><msqrt><mi>2x+4</mi></msqrt></math>; at a =6?",
+        options: ["<math><mfrac><mi>1</mi><mi>16</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>8</mi></mfrac></math>", "<math><mfrac><mi>5</mi><mi>4</mi></mfrac></math>", "<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"5. What is the equation of tangent line to the graph of the function g(x) = sin(x) at the point where x= <math><mfrac><mi>3</mi><mn>2</mn></mfrac></math>π?",//Exercice book book p675
+        options: ["0", "-1", "π", "<math><mfrac><mi>π</mi><mn>2</mn></mfrac></math>"],
+        answer: 1,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q: "6. What is the derivative of a function h(x) = x<sup>3</sup>-9x at x<sub>0</sub>?",//Exercice book 
+        options:["-<math><mfrac><mi>68</mi><mi>9</mi></mfrac></math>", "-<math><mfrac><mi>78</mi><mi>9</mi></mfrac></math>", "<math><mfrac><mi>15</mi><mi>2</mi></mfrac></math>", "<math><mfrac><mi>25</mi><mi>2</mi></mfrac></math>"],
+        answer: 2,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"7. If the graph of the functions f and g given by f(x)=4-x<sup>2</sup> and g(x)=x<sup>3</sup> - 8x have the same slope, determine the value of x?",//Exercice book p678
+        options:["2", "-2", "0", "4"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"8. Which of the following is the equation of the tangent to the curve y = <math><mfrac><mi>x-7</mi><mi>(x-2)(x-3)</mi></math></mfraction> at the point where it cuts the x-axis?",//Exam paper
+        options:["x - 20y - 7 = 0", "x + 20y + 7 = 0", "20x + y - 7 = 0", "x - 20y + 7 = 0"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+    {
+       q:"9. If y = ln(tan(x)), then <math><mfrac><mi>dy</mi><mi>dx</mi></mfrac></math> = ?",//Exam paper
+       options:["2sin(2x)", "2tan(x)", "2csc(2x)", "2cot(2x)"],
+       answer: 2,
+       video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"10. What is the derivative of the function f(x) = 6x<sup>4/3</sup> - \\( \\frac{1}{3x^3} \\) - <math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>x<sup>2</sup>? ",//text book p80,
+        options:["8x<sup>1/3</sup> + x<sup>-4</sup> - x", "8x<sup>4/3</sup> - x<sup>-4</sup> - x", "6x<sup>1/3</sup> + x<sup>-3</sup> - 2x", "8x<sup>1/3</sup> - x<sup>-4</sup> + x"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"11. If f(x) = lnx , then what is the value of f<sup>(n)</sup>(x)?",//exam paper
+        options:["<math><mfrac><mi>(-1)^{n-1}(n-1)! </mi><mi>x^{n}</mi></mfrac></math>", "<math><mfrac><mi>(-1)^{n}(n-1)! </mi><mi>x^{n}</mi></mfrac></math>", "<math><mfrac><mi>(-1)^{n-1}n! </mi><mi>x^{n}</mi></mfrac></math>", "<math><mfrac><mi>(-1)^{n}n! </mi><mi>x^{n}</mi></mfrac></math>"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"12. If F(x) = f(x<sup>2</sup>+1) + <math><mfrac><mi>f(1-x)</mi><mi>cos(&pi;x)</mi></mfrac></math>, f'(2) = 10, f'(0) = f(2) = -4 and f(0) = 6, then F'(1) is equal to?",//exam paper
+        options:["-12", "16", "24", "-4"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q:"13. What is the derivative of the function f(x) = (x<sup>2</sup> - 2)(x<sup>3</sup> + 4x)?",
+        options:["6x<sup>4</sup> + 8x<sup>2</sup> - 12x", "6x<sup>4</sup> + 8x<sup>2</sup> - 12", "6x<sup>4</sup> + 8x<sup>2</sup>", "6x<sup>4</sup> + 8x<sup>2</sup> - 12x - 8"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+      {
+        q: "14. What is the derivative of the function f(x) = \\(\\left(\\frac{3x-5}{2-7x}\\right)^{6} \\)?",
+        options:["\\( \\frac{-174(3x-5)^{5}}{(2-7x)^{7}} \\)", "\\( \\frac{126(3x-5)^{6}}{(2-7x)^{7}} \\)", "\\( \\frac{-174(3x-5)^{5}}{(2-7x)^{6}} \\)", "\\( \\frac{126(3x-5)^{6}}{(2-7x)^{6}} \\)"],
+        answer: 0,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+{
+        q: "15. what is the derivative of the function f(x) = <math><mfrac><mi>-&pi;</mi><msup><mi>x</mi><mrow><mi>e</mi></mrow></msup></mfrac></math>?",
+        options:["<math><mfrac><mi>-&pi;e</mi><msup><mi>x</mi><mrow><mi>e+1</mi></mrow></msup></mfrac></math>", "<math><mfrac><mi>-&pi;e</mi><msup><mi>x</mi><mrow><mi>e-1</mi></mrow></msup></mfrac></math>", "<math><mfrac><mi>&pi;</mi><msup><mi>x</mi><mrow><mi>e+1</mi></mrow></msup></mfrac></math>","<math><mfrac><mi>&pi;e</mi><msup><mi>x</mi><mrow><mi>e+1</mi></mrow></msup></mfrac></math>"],
+        answer: 3,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+},  
+{
+       q: "16. If f has a vertical tangent at x = a , find the value of a  since f'(a)= <math><mfrac><mi>-4</mi><msup><mi>5x</mi><mrow><mi>9/5</mi></mrow></msup></mfrac></math>",
+       options:["4", "1", "0", "9"],
+       answer: 1,
+        video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+      q:"17. What is the derivative of the function <math><mroot><msup><mi>3</mi><mn>x</mn></msup><mn>3</mn></mroot></math>",
+      options:["<math><mroot><msup><mi>3</mi><mn>x</mn></msup><mn>3</mn></mroot></math> ln3", "<math><mroot><msup><mi>3</mi><mn>x</mn></msup><mn>3</mn></mroot></math>","<math><mroot><msup><mi>3</mi><mn>x-3</mn></msup><mn>3</mn></mroot></math> ln3", "<math><mroot><msup><mi>3</mi><mn>x-3</mn></msup><mn>3</mn></mroot></math>"],
+      answer: 2,
+      video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+      },
+{
+      q: "18. What is the derivative of a function f(x) = (x<sup>3</sup> + 2x + 3)(e<sup>2x</sup>?",
+      options: ["(3x<sup>3</sup> + 2x)e<sup>2x</sup> ", "(3x<sup>2</sup> - 2x<sup>2</sup> + 4)e<sup>2x</sup>", " 2(x<sup>3</sup> + 2x + 3)e<sup>2x</sup>", "(2x<sup>3</sup> + 3x<sup>2</sup> - 4x + 4)e<sup>2x</sup> "],
+     answer: 3,
+     video:"https://www.youtube.com/embed/4X8f2F1J8Qc"   
+    },
+  {
+    q:"19. What is the derivative of the function f(x) = <math><mfrac><mi>x sin(x)</mi><msup><mi>x-e</mi><mrow><mi>x</mi></mrow></msup></mfrac></math> at f(x) = 0?",
+    options:["-1", "0", "-2", "2"],
+    answer: 2,
+    video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q:"20. Let h(x) = sin(3x+1), Evaluate h'\\(\\left(\\frac{&pi;-2}{6}\\right)\\)",
+    options:["0", "1", "-1", "2"],
+    answer: 0,
+    video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+  {  q:"21. Find the equation of the line tangent to the graph of f(x) = \\(\\left(\\frac{x^{2}}{x^{2}+ 2x}\\right)\\) at x = 1?",
+     options:["<math><mfrac><mi>1</mi><mn>3</mn></mfrac></math>", "<math><mfrac><mi>2</mi><mn>3</mn></mfrac></math>", "<math><mfrac><mi>3</mi><mn>2</mn></mfrac></math>", "<math><mfrac><mi>1</mi><mn>2</mn></mfrac></math>"],
+     answer: 1,
+     video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q:"22. What are the critical numbers of the function f(X)=8x<math><msqrt><msup><mi>1-x</mi><mn>2</mn></msup></msqrt></math>?",
+    options:["&plusmn;<math><mfrac><mi>1</mi><mn>2</mn></mfrac></math>", "-1, 1", "1, &plusmn;<math><mfrac><mi>1</mi><mn>2</mn></mfrac></math>", "1"],
+    answer: 2,
+    video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q: "23. What is the maximum possible interval for which the function f is continuous for f(x) = <math><msqrt><mfrac><mrow><mn>4</mn><mi>x</mi><mo>-</mo><mn>12</mn></mrow><mrow><mn>9</mn><mo>-</mo><mi>x</mi></mrow></mfrac></msqrt></math>",// exam paper
+    options:["(-&infin;, 9)", "[3, 9)", "(-3, 9]", "(-&infin;, -3] &cup; (9, &infin;)"],
+    answer: 1,
+    video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q:"24. For x = 4, the function h(x) = \\( \\frac{x^{2}+x-20}{x-4} \\). What value should be assigned to h(4) so that h(x) is continuous at 4?",//exam paper
+    options:["-1", "9", "5", "0"],
+    answer: 0,
+    video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+{ 
+  q:"25. If \\(f(x)=\\begin{cases}&emsp;&emsp;m-5,&emsp; if &emsp;x&le;2\\\\x^2+3mx+6,if &emsp;x>2\\end{cases}\\), then which of the following is the value of m so that f is continuous at x = 2?",//exam paper
+ options:["-5","3","5","-3"], 
+ answer: 3,
+ video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+ },
+ {
+  q:"26. If \\(f(x)=\\begin{cases}ax^2 + bx + 1, if&emsp; 2&le;x&le;3\\\\ax+b, &emsp;&emsp;&emsp;if&emsp; x<2\\\\bx+4,&emsp;&emsp;&emsp;if&emsp;x>3\\end{cases}\\) is continuous function, then the value of a and b respectively are:",//exam paper
+  options:["<math><mfrac><mi>1</mi><mn>3</mn></mfrac></math>,-<math><mfrac><mi>5</mi><mi>3</mi></mfrac></math>", "3, -<math><mfrac><mi>5</mi><mn>9</mn></mfrac></math>", "-3, <math><mfrac><mi>5</mi><mi>9</mi></mfrac></math>", "-<math><mfrac><mi>5</mi><mi>9</mi></mfrac></math>, 3"],
+  answer: 0,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+{ 
+  q:"27. If f(x) = <math><mfrac><mi>6x</mi><mi>x+a</mi></mfrac></math>, then for what value of a does f'(a) = 1?",//exam paper
+  options:["-<math><mfrac><mi>3</mi><mn>2</mn></mfrac></math>", "<math><mfrac><mi>3</mi><mn>2</mn></mfrac></math>", "0", "<math><mfrac><mi>2</mi><mn>3</mn></mfrac></math>"],
+  answer: 1,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+{
+  q:"28. If f(x) = ax<sup>3</sup> + bx - 5 has a relative minimum value of -6 at x = <math><mfrac><mi>1</mi><mn>2</mn></mfrac></math>, find a and b.",//text book p95
+  options:["a = 4, b = -4", "a = -4, b = 4", "a = 2, b = -2", "a = 42, b = -3"],
+  answer: 3,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+{
+  q:"29. For what values of x is the gradient of the line tangent to f(x) = -2x<sup>3</sup> - <math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>x<sup>2</sup> + 2x negative?",//exam paper
+  options:["(-&infin;, -<math><mfrac><mi>2</mi><mn>3</mn></mfrac></math>) & (<math><mfrac><mi>1</mi><mn>2</mn></mfrac></math>, &infin;)", "(-<math><mfrac><mi>2</mi><mn>3</mn></mfrac></math>, <math><mfrac><mi>1</mi><mn>2</mn></mfrac></math>)", "-2, -<math><mfrac><mi>3</mi><mn>2</mn></mfrac></math>", "(-&infin;, -2) & (-<math><mfrac><mi>3</mi><mn>2</mn></mfrac></math>, &infin;)"],
+  answer: 0,
+  },
+{
+  q:"30. What is the relative maximum value of f(x) = <math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>x<sup>3</sup> - x<sup>2</sup> - 3x?",//exam paper
+  options:["-9", "-<math><mfrac><mi>11</mi><mn>3</mn></mfrac></math>", "<math><mfrac><mi>5</mi><mn>3</mn></mfrac></math>", "4"],
+  answer: 2,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"31. What is the relative minimum value of f(x) = x<sup>4</sup> - 2x<sup>2</sup> + 4 on the interval [0,2]?",//exam paper
+  options:["-4", "-3", "3", "4"],
+  answer: 2,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q: "32. If f(x) = (x<sup>2</sup> + 1)<sup>(2-3x)</sup>, then f'(1) is equal to ?",//exam paper
+  options:["-<math><mfrac><mi>1</mi><mi>2</mi></math>ln(8e)", "-ln(8e)", "-<math><mfrac><mi>3</mi><mi>2</mi></mfrac></math>ln(2)", "-<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>-<math><mfrac><mi>3</mi><mi>2</mi></mfrac></math>ln2"],
+  answer: 3,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q: "33. Which of the following is the equation of the tangent line to the graph of f(x) \\(f(x)=\\begin{cases}&emsp;&emsp;x-&pi;,&emsp; &emsp;x&le;0\\\\1-2sin(x), &emsp;x>0\\end{cases}\\), at (&pi;, f(&pi;))?",//exam paper
+  options:["y = 2x - 2&pi; + 1", "y = 2x - 2&pi; - 1", "y = -2x + 2&pi; - 1", "y = -2x + 2&pi; - 1"],
+  answer: 0,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q: "34. Which of the following is the critical numbers of f(x) = sin<sup>2</sup>(x) + 2cos(x) is ?",//exam paper
+  options:["x=n&pi;, n is an even integer", "x=n&pi;", "x=&pi;, n is an integer", "<math><mfrac><mi>n</mi><mn>&pi;</mn></mfrac></math>, n is an integer"],
+  answer: 2,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"35. Which of the following is the absolute minimum value of f(x) = e<sup>-(x-1)<sup>2</sup></sup> on the interval [0, 2]?",//exam paper
+  options:["<math><mfrac><mi>1</mi><mi>e</mi></mfrac></math>", "e", "1", "-1"],
+  answer: 0,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"36. The local maximum value of the function f(x) = \\( \\frac{x^{2}-1}{x^{2}-4} \\) is ?",//exam paper
+  options:["<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>", "4", "0", "1"],
+  answer: 0,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"37.Let f(x) = e<sup>3x-1</sup> and g(x) = tanx. If F(x) = xf(x) + f(g(x)) then F'(0) is:-",//Extream book page 679
+  options:["3e<sup>-1</sup>", "4e<sup>-1</sup>", "\\( \\frac{1}{e} \\) + \\( \\frac{1}{e^{2}} \\)", "\\( \\frac{1}{e} \\) + \\( \\frac{3}{e^{2}} \\)"],
+  answer: 1,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q: "38. What are all points at where f(x) = <math><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></math>",//exam paper
+  options:["f(x) = -2, 0, ", "f(x) = 6, 0", "f(x) =  2, 3", "f(x) = -3, , 3"],
+  answer: 1,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"39. In which interval f(x) = x<sup>3</sup> + 3x<sup>2</sup> - 9x + 5 is strictly increasing?",//exam paper
+  options:["(-&infin;, -3] and [1, &infin;)", "[-3, 1]", "[-1, -3]", "(-&infin;, -1] and [3, &infin;)"],
+  answer: 0,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"40. A water tank is a rectangular parallelepiped with base length 3m, width 2m and height 2.5m. If water is flowing into the tank at a rate of 0.12m<sup>3</sup>/sec, how fast does the level of water rise up in the tank?",//exam paper
+  options:["0.05 m/s", "0.03 m/s", "0.04 m/s", "0.02 m/s"],
+  answer: 1,
+},
+{
+  q: " 41. If y = 3x<sup>2</sup>sin(x) and x = <math><msqrt><mi>t</mi></msqrt></math>, then what is the value of <math><mfrac><mi>dy</mi><mi>dt</mi></mfrac></math> at?",//exam paper
+  options:["6tcos<math><msqrt><mi>t</mi></msqrt></math>", "3sin<math><msqrt><mi>t</mi></msqrt></math> + <math><mfrac><mi>3</mi><mi>2</mi></mfrac></math><math><msqrt><mi>t</mi></msqrt></math>cos<math><msqrt><mi>t</mi></msqrt></math>", "<math><mfrac><mi>3</mi><mi>2</mi></mfrac></math>sin<math><msqrt><mi>t</mi></msqrt></math> + 3cos<math><msqrt><mi>t</mi></msqrt></math>", "3(<math><msqrt><mi>t</mi></msqrt></math>sin<math><msqrt><mi>t</mi></msqrt></math> + cos<math><msqrt><mi>t</mi></msqrt></math>)"],
+  answer: 1,
+  video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"42. What is the maximum possible area of a rectangle in square units with diagonal of length 16 units?", //exam paper
+  options:["256", "64", "32", "128"],
+  answer: 3,
+  video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"43. The maximum area of a rectangle that can be inscribed in a circle of radius r is:-",//exap paper
+  options:["4r<sup>2</sup>", "2r<sup>2</sup>","<math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>r<sup>2</sup>","<math><mfrac><mi>1</mi><mi>4</mi></mfrac></math>r<sup>2</sup>"],
+  answer: 1,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"44. Which of the following is the maximum value of xy when x + y = 12?",//exam paper
+  options:["24", "30", "32", "36"],
+  answer: 3,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"45. The shortest distance from the point(0,0) to a point (x,y) on the parabola y + <math><mfrac><mi>1</mi><mi>2</mi></mfrac></math>x<sup>2</sup> - 2 is:-",//exam paper
+  options:["<math><msqrt><mi>2</mi></msqrt></math>", "<math><msqrt><mi>3</mi></msqrt></math>", "4", "2<math><msqrt><mi>2</mi></msqrt></math>"],
+  answer: 1,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"46. The width of a rectangle is increasing at a rate of 2cm/sec, and its length is increasing at the rate of 3cm/sec. At what rate is the area of the rectangle increasing when its width is 4cm and its length is 5cm?",//exam paper
+  options:["31cm/sec","23cm/sec","5cm/sec","22cm/sec"],
+  answer: 3,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"47. What is the maximum area of a triangle which is inscribed in a circle of radius 2 units and one of its side passing through the center of the circle?",//exam paper
+  options:["4sq.units", "2sq.units", "8sq.units", "16sq.units"],
+  answer: 0,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"48. An open top square base rectangular box container is to have a volume of 32cm<sup>3</sup>. What should be the height(h) of the box to obtain the minimum possible surface area?",//exam paper
+  options:["h = 8cm","h = 4cm", "h = 2cm", "h = 16cm"],
+  answer: 2,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"49. A conical tank full of water is height 20 feet and radius 5 feet at the top. If the water is flowing out at the bottom at the rate of 2ft<sup>3</sup>/min. What is the rate at which the water level is falling when the water level is 16 feet above the bottom?",//exam paper
+  options:["<math><mfrac><mi>8</mi><mi>&pi;</mi></mfrac></math>ft/min", "<math><mfrac><mi>1</mi><mi>8&pi;</mi></mfrac></math>ft/min", "<math><mfrac><mi>1</mi><mi>18&pi;</mi></mfrac></math>ft/min", "<math><mfrac><mi>18</mi><mi>&pi;</mi></mfrac></math> ft/min"],
+  answer: 1,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"50. The radius of a right circular cylinder of height 10 cm increased at a rate of 3cm/sec. What is the rate of change of the volume of the cylinder when the radius is 8cm?",//exam paper
+  options:["80&pi; cm<sup>3</sup>/sec", "320&pi; cm<sup>3</sup>/sec", "480&pi; cm<sup>3</sup>/sec", "720&pi; cm<sup>3</sup>/sec"],
+  answer: 2,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"51. A point moves along the curve y = x<sup>3</sup> - 3x + 5, so that x = <math><mfrac><mi>1</mi><mi>2</mi></mfrac></math><math><msqrt><mi>t</mi></msqrt></math> + 3, where t is time.  At what rate y is changing when t = 4?",//exam paper
+  options:["8", "45", "<math><mfrac><mi>8</mi><mi>45</mi></mfrac></math>", "<math><mfrac><mi>45</mi><mi>8</mi></mfrac></math>"],
+  answer: 3,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"52. If w = 3y<sup>5</sup> - 2y<sup>3</sup> + 1 and y = 2x<sup>2</sup> - 1 and x = 3t - 2, then <math><mfrac><mi>dw</mi><mi>dt</mi></mfrac></math> at t = 1 is equal to:-",//exam paper
+  options:["2", "24", "120", "108"],
+  answer: 3,
+},
+{
+  q:"53. Which of the following is the antiderivative of the function f(x) = <math><mfrac><mi>3</mi><mrow><mn>x</mn><msqrt><mi>x</mi></msqrt></mrow></mfrac></math>?",//exam paper
+  options:["<math><mfrac><mi>6</mi><mrow><msqrt><mi>x</mi></msqrt></mrow></mfrac></math> + c", "-6<math><msqrt><mi>x</mi></msqrt></math> + c", "-<math><mfrac><mi>6</mi><mrow><msqrt><mi>x</mi></msqrt></mrow></mfrac></math> + 1", "-<math><mfrac><mi>3</mi><mrow><mn>2</mn><msqrt><mi>x</mi></msqrt></mrow></mfrac></math> + 3"],
+  answer: 2,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"54.<math><mo>∫</mo></math>\\( \\frac{dx}{(e)^{-x}(1+e^{x})} \\) = ?",//exam paper
+  options:["e<sup>-x</sup> + c", "\\( \\frac{1}{1+e^{-1}} \\) + c", "ln|e<sup>-x</sup>| + c", "ln|1+e<sup>x</sup>| + c"],
+  answer: 3,
+  video:"https://www.youtube.com/embed/4X8f2F1J8Qc" 
+},
+{
+  q:"57. <math><mo>∫</mo></math>\\( \\frac{6x}{(x^{2} + 1)^{2}} \\)dx is equal to  ",
+  options:["\\( \\frac{1}{(x^{2} + 1)^{3}} \\) + c", "-\\( \\frac{x}{x^{2}+1} \\) + c ","\\( \\frac{3}{x^{2} + 1^{3}} \\) + c", "-\\( \\frac{3}{x^{2} + 1^{3}} \\) + c"],
+  answer: 3,
+  video: "https://www.youtube.com/embed/4X8f2F1J8Qc"
+},
+{
+  q:"58. which  of the following is equal to <math><mo>∫</mo></math>\\( \\frac{(e^{x} + 1)^{2}}{e^{x}} \\)dx ",
+  options:["e<sup>x</sup> + e<sup>-x</sup> + 2x +c", "<math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>(e<sup>x</sup> + 1)<sup>3</sup> + c", "e<sup>x</sup> - e<sup>-x</sup> + 2x + c", "<math><mfrac><mi>1</mi><mi>3</mi></mfrac></math>(1-e<sup>-x</sup>)<sup>3</sup> + c"],
+  answer:2,
+},
+  {
+    q:"59. Let \\(\\int_{2}^{4} x^3\\,dx\\) = 60, \\(\\int_{2}^{4}\\,dx\\) = 6 and \\(\\int_{2}^{4}\\,dx\\) = 2. Which of the following statements is NOT true?",//exam paper
+      options:["\\(\\int_{4}^{2}x^3\\,dx\\) = -60", "\\(\\int_{4}^{2}(x-8)\\,dx\\) = 10", "\\(\\int_{2}^{4}4x \\,dx\\) = 24", "\\(\\int_{2}^{4} (x^3 + 4)\\,dx\\) = 62"],
+      answer: 3,
+      video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {    q:"60. \\(\\int_{1}^{5}\\,\\)<math><mfrac><mi>x</mi><mrow><mn></mn><msqrt><mi>2x-1</mi></msqrt></mrow></mfrac></math> dx = _________",//exam paper
+    options:["\\( \\frac{4}{3} \\)", "\\( \\frac{8}{3} \\)", "\\( \\frac{16}{3} \\)", "\\( \\frac{32}{3} \\)"],
+    answer: 2,
+    video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q:"61. \\(\\int_{-1}^{1} \\frac{7x + 3}{(7x^2 + 6x + 8)^2}\\,dx\\) is = _________",//exam paper
+    options:["-\\( \\frac{1}{42} \\)", "\\( \\frac{1}{18} \\)", "\\( \\frac{1}{36} \\)", "\\( \\frac{2}{63} \\)"],
+    answer: 3,
+    video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q:"62. \\(\\int_{3}^{4} \\frac{x}{x^2 - x - 2}\\,dx\\) is = _________",//exam paper
+    options:["-\\( \\frac{5}{2} \\)ln2", "-\\( \\frac{8}{3} \\)ln2", "\\( \\frac{ln5}{3} \\)", "\\( \\frac{1}{3} \\)ln\\( \\frac{5}{4} \\)"],
+    answer: 2,
+    video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  {
+    q:"63. The value of \\(\\int_{0}^{3} |x-1|\\,dx\\) is = _________",//exam paper
+    options:["\\( \\frac{3}{2} \\)", "\\( \\frac{5}{2} \\)", "1", "\\( \\frac{9}{2} \\)"],
+    answer: 1,
+    video:"https://www.youtube.com/embed/4X8f2F1J8Qc"
+  },
+  
+]
+</script>
+<script src="quize-engine.js"></script>
+</body>
+</html>

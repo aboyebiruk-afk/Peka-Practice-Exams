@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<meta charset="UTF-8">
+<title>Exam Portal</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        background: #e1e1e1;
+        color: #1f2937;
+    }
+
+    /* HEADER */
+    /* HEADER WITH BACKGROUND IMAGE */
+.header {
+    position: relative;
+    padding: 30px 50px;   /* more height for image */
+    background-image: url("img.11.png");
+    background-size: cover;
+    background-position: center;
+    color: rgb(207, 207, 223);
+    border-bottom: 1px solid #e5e7eb;
+    font-style: italic;
+}
+
+/* Dark overlay for readability */
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Keep text above overlay */
+.header h1,
+.header p {
+    position: relative;
+    z-index: 1;
+}
+
+
+    .header h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .header p {
+        margin-top: 6px;
+        color: #6b7280;
+    }
+
+    /* MAIN LAYOUT */
+    .main {
+        display: flex;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 40px;
+        gap: 40px;
+    }
+
+    /* LEFT PANEL – GRADE */
+    .left-panel {
+        width: 35%;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .grade-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .card.active {
+        border-color: #2563eb;
+    }
+
+    .badge {
+        background: #2563eb;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .card h3 {
+        margin: 10px 0 5px;
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #6b7280;
+    }
+
+    /* RIGHT PANEL */
+    .right-panel {
+        
+        width: 65%;
+    background: 
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url("img.10.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    min-height: 380px;
+    animation: fadeIn 0.6s ease;
+    transition: background 0.4s ease;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .option-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .option-card {
+        background:linear-gradient(135deg,#2E3192, #1BFFFF);
+        border-radius: 14px;
+        padding: 25px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .option-card:hover {  
+        background: #eef2ff;
+        border-color: #2563eb;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .card {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(58, 14, 14);
+    position: relative;
+}
+
+/* Dark overlay for text readability */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,#ee3939, #0088ff);
+    border-radius: 16px;
+}
+
+.card * {
+    position: relative;
+    z-index: 1;
+}
+.grade-9 {
+    background-image: url("img.10.png");
+}
+
+.grade-10 {
+    background-image: url("images/grade10.jpg");
+}
+
+.grade-11 {
+    background-image: url("images/grade11.jpg");
+}
+
+.grade-12 {
+    background-image: url("images/grade12.jpg");
+}
+/* IMAGE SECTION INSIDE SUBJECT & CHAPTER BOX */
+.panel-image {
+    height: 180px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    margin-bottom: 25px;
+    color: white;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+.panel-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Title text above overlay */
+.panel-image h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+.subject-image {
+    background-image: url("img.11.png");
+}
+
+.chapter-image {
+    background-image: url("img.12.png");
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Welcome to your exam page</h1>
+    <p>Please select the Grade, Subject, and Chapter to begin your session. Let's start!</p>
+    
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- LEFT – GRADES -->
+    <div class="left-panel">
+        <div class="section-title">Choose Grade</div>
+
+        <div class="grade-grid">
+            <div class="card" onclick="selectGrade(this, 9)">
+               
+                <h3>Grade 9</h3>
+               
+            </div>
+
+            <div class="card" onclick="selectGrade(this, 10)">
+                
+                <h3>Grade 10</h3>
+             
+            </div>
+
+            <div class="card" onclick="selectGrade(this, 11)">
+                
+                <h3>Grade 11</h3>
+                
+            </div>
+
+            <div class="card" onclick="selectGrade(this, 12)">
+                
+                <h3>Grade 12</h3>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT – SUBJECT & CHAPTER -->
+    <div class="right-panel">
+
+        <!-- SUBJECT -->
+        <div id="subjectSection" class="hidden">
+
+    <!-- IMAGE HEADER -->
+    <div class="panel-image subject-image">
+        <h2 id="subjectTitle"></h2>
+    </div>
+
+    <div class="option-grid">
+        <div class="option-card" onclick="selectSubject('Physics')">Physics</div>
+        <div class="option-card" onclick="selectSubject('Mathematics')">Mathematics</div>
+        <div class="option-card" onclick="selectSubject('Chemistry')">Chemistry</div>
+    </div>
+</div>
+
+        <!-- CHAPTER -->
+        <!-- CHAPTER -->
+<div id="chapterSection" class="hidden">
+
+    <!-- IMAGE HEADER -->
+    <div >
+        <h2 id="chapterTitle"></h2>
+    </div>
+
+    <div class="option-grid">
+        <div class="option-card">Chapter 1</div>
+        <div class="option-card">Chapter 2</div>
+        <div class="option-card">Chapter 3</div>
+        <div class="option-card">Chapter 4</div>
+        <div class="option-card">Chapter 5</div>
+        <div class="option-card">Chapter 6</div>
+        <div class="option-card">Chapter 7</div>
+    </div>
+</div>
+
+
+<script>
+
+const data = {
+  9: {
+    Physics: [
+      { name: "Chapter 1", page: "grade9/physics/motion.html" },
+      { name: "Chapter 2", page: "grade9/physics/force.html" },
+      { name: "Chapter 3", page: "grade9/physics/work.html" },
+      { name: "Chapter 4", page: "grade9/physics/energy.html" },
+      { name: "Chapter 5", page: "grade9/physics/sound.html" }
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "grade9/math/numbers.html" },
+      { name: "Chapter 2", page: "grade9/math/algebra.html" },
+      { name: "Chapter 3", page: "grade9/math/geometry.html" },
+      { name: "Chapter 4", page: "grade9/math/statistics.html" },
+      { name: "Chapter 5", page: "grade9/math/probability.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "grade9/chemistry/numbers.html" },
+      { name: "Chapter 2", page: "grade9/chemistry/algebra.html" },
+      { name: "Chapter 3", page: "grade9/chemistry/geometry.html" },
+      { name: "Chapter 4", page: "grade9/chemistry/statistics.html" },
+      { name: "Chapter 5", page: "grade9/chemistry/probability.html" },
+      { name: "Chapter 6", page: "grade9/chemistry/periodic.html" }
+    ]
+  },
+
+  10: {
+    Physics: [
+      { name: "Chapter 1", page: "grade10/physics/light.html" },
+      { name: "Chapter 2", page: "grade10/physics/electricity.html" },
+      { name: "Chapter 3", page: "grade10/physics/magnetism.html" },
+      { name: "Chapter 4", page: "grade10/physics/waves.html" },
+      { name: "Chapter 5", page: "grade10/physics/modern.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "grade10/chemistry/reactions.html" },
+      { name: "Chapter 2", page: "grade10/chemistry/states.html" },
+      { name: "Chapter 3", page: "grade10/chemistry/solutions.html" },
+      { name: "Chapter 4", page: "grade10/chemistry/acids.html" },
+      { name: "Chapter 5", page: "grade10/chemistry/bases.html" }
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "grade10/math/functions.html" },
+      { name: "Chapter 2", page: "grade10/math/graphs.html" },
+      { name: "Chapter 3", page: "grade10/math/trigonometry.html" },
+      { name: "Chapter 4", page: "grade10/math/calculus.html" },
+      { name: "Chapter 5", page: "grade10/math/statistics.html" }
+    ]
+  },
+
+  11: {
+    Physics: [
+      { name: "Chapter 1", page: "grade11/physics/kinematics.html" },
+      { name: "Chapter 2", page: "grade11/physics/dynamics.html" },
+      { name: "Chapter 3", page: "grade11/physics/thermodynamics.html" },
+      { name: "Chapter 4", page: "grade11/physics/optics.html" },
+      { name: "Chapter 5", page: "grade11/physics/electromagnetism.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "grade11/chemistry/atomic.html" },
+      { name: "Chapter 2", page: "grade11/chemistry/bonding.html" },
+      { name: "Chapter 3", page: "grade11/chemistry/stoichiometry.html" },
+      { name: "Chapter 4", page: "grade11/chemistry/thermochemistry.html" },
+      { name: "Chapter 5", page: "grade11/chemistry/equilibrium.html" }
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "grade11/math/sets.html" },
+      { name: "Chapter 2", page: "grade11/math/functions.html" },
+      { name: "Chapter 3", page: "grade11/math/matrices.html" },
+      { name: "Chapter 4", page: "grade11/math/determinants.html" },
+      { name: "Chapter 5", page: "grade11/math/probability.html" }
+    ]
+  },
+
+  12: {
+    Physics: [
+      { name: "Chapter 1", page: "grade12/physics/electrostatics.html" },
+      { name: "Chapter 2", page: "grade12/physics/current.html" },
+      { name: "Chapter 3", page: "grade12/physics/magnetic.html" },
+      { name: "Chapter 4", page: "grade12/physics/electromagnetic.html" },
+      { name: "Chapter 5", page: "grade12/physics/modern.html" }
+    ],
+    Chemistry: [
+      { name: "Chapter 1", page: "Acid Base equilibria.html" },
+      { name: "Chapter 2", page: "Ionic equilibria of week acid and base.html" },
+      { name: "Chapter 3", page: "grade12/chemistry/physical.html" },
+      { name: "Chapter 4", page: "grade12/chemistry/biochemistry.html" },
+      { name: "Chapter 5", page: "grade12/chemistry/environmental.html" }
+    ],
+    Mathematics: [
+      { name: "Chapter 1", page: "Sequence and Series.html" },
+      { name: "Chapter 2", page: "Calcules.html" },
+      { name: "Chapter 3", page: "grade12/math/integration.html" },
+      { name: "Chapter 4", page: "grade12/math/vectors.html" },
+      { name: "Chapter 5", page: "grade12/math/probability.html" }
+    ]
+  }
+};
+
+
+
+
+let selectedGrade = null;
+let selectedSubject = null;
+
+function selectGrade(card, grade) {
+  selectedGrade = grade;
+
+  document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+  card.classList.add("active");
+
+  const subjectGrid = document.querySelector("#subjectSection .option-grid");
+  subjectGrid.innerHTML = "";
+
+  Object.keys(data[grade]).forEach(subject => {
+    const btn = document.createElement("div");
+    btn.className = "option-card";
+    btn.textContent = subject;
+    btn.onclick = () => selectSubject(subject);
+    subjectGrid.appendChild(btn);
+  });
+
+  document.getElementById("subjectTitle").innerText =
+    `Grade ${grade} – Select Subject`;
+
+  document.getElementById("subjectSection").classList.remove("hidden");
+  document.getElementById("chapterSection").classList.add("hidden");
+}
+
+function selectSubject(subject) {
+  selectedSubject = subject;
+
+  const chapterGrid = document.querySelector("#chapterSection .option-grid");
+  chapterGrid.innerHTML = "";
+
+  data[selectedGrade][subject].forEach(chapter => {
+    const btn = document.createElement("div");
+    btn.className = "option-card";
+    btn.textContent = chapter.name;
+    btn.onclick = () => openChapter(chapter.page);
+    chapterGrid.appendChild(btn);
+  });
+
+  document.getElementById("chapterTitle").innerText =
+    `Grade ${selectedGrade} / ${subject} – Select Chapter`;
+
+  document.getElementById("chapterSection").classList.remove("hidden");
+}
+
+function openChapter(page) {
+  window.location.href = page;
+}
+
+
+</script>
+
+</script>
+
+</body>
+</html>
+
