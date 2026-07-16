@@ -10,7 +10,6 @@ questions.forEach(item => {
 
   const title = document.createElement("h3");
   title.innerHTML = item.q;
-  MathJax.typesetPromise([title]);
 
   const optionsDiv = document.createElement("div");
   optionsDiv.className = "options";
